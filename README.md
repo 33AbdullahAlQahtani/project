@@ -42,3 +42,18 @@ LIMIT 5;
 ```
 ![image](https://github.com/user-attachments/assets/cd71a454-7afa-461f-9752-b3a90d9fee55)
 
+## 2.2 Calculate the Sum of Reviews Perspective to the Rating and Order them By the Most to Least
+For this query, we use the aggregate function of MySQL |SUM()| and |GROUP BY| to group the reviews respective to their ratings
+and then we use |ORDER BY| to show them from the most reviews per rating to their least
+```diff
+USE project;
+-- Abdullah Al-Qahtani
+SELECT rating, SUM(review_count) AS 'Total Reviews'
+FROM cinema
+GROUP BY rating
+ORDER BY 'Total Reviews' DESC;
+```
+![image](https://github.com/user-attachments/assets/11a69e57-ea42-4189-96d3-5e1356771ce7)
+
+# 2.3 The Cinema with the Most Comments
+
